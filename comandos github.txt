@@ -1,0 +1,416 @@
+16/10 a 27/10 
+Isidro
+
+987322339@TREDOTIWX111-VM MINGW64 ~
+$ cd Desktop/Workspace_java/
+
+987322339@TREDOTIWX111-VM MINGW64 ~/Desktop/Workspace_java
+$ cd Biblioteca/
+
+987322339@TREDOTIWX111-VM MINGW64 ~/Desktop/Workspace_java/Biblioteca
+$ git init
+Initialized empty Git repository in C:/Users/987322339/Desktop/Workspace_java/Biblioteca/.git/
+
+987322339@TREDOTIWX111-VM MINGW64 ~/Desktop/Workspace_java/Biblioteca (master)
+$ git remote add origin https://github.com/Clayton-Pires/Bibiloteca.git
+
+987322339@TREDOTIWX111-VM MINGW64 ~/Desktop/Workspace_java/Biblioteca (master)
+$ git add *.java
+
+987322339@TREDOTIWX111-VM MINGW64 ~/Desktop/Workspace_java/Biblioteca (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   src/Bibioteca.java
+        new file:   src/Livro.java
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .classpath
+        .project
+        .settings/
+        bin/
+
+
+987322339@TREDOTIWX111-VM MINGW64 ~/Desktop/Workspace_java/Biblioteca (master)
+$ git commit -m "primeiro commit"
+[master (root-commit) 7532bbc] primeiro commit
+ 2 files changed, 121 insertions(+)
+ create mode 100644 src/Bibioteca.java
+ create mode 100644 src/Livro.java
+
+987322339@TREDOTIWX111-VM MINGW64 ~/Desktop/Workspace_java/Biblioteca (master)
+$ git push origin master
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 1.03 KiB | 262.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Clayton-Pires/Bibiloteca.git
+ * [new branch]      master -> master
+
+987322339@TREDOTIWX111-VM MINGW64 ~/Desktop/Workspace_java/Biblioteca (master)
+
+***************************************************************
+
+28/10
+Ricardo 
+senha banco: mysql
+
+-- Criar uma database e colocar em uso 
+-- create database itau;
+-- use itau;
+
+-- Criar uma tabela e seus campos
+/*create table itau.Clientes(
+cod_cliente int not null primary key,
+nome_cliente varchar(50) not null,
+idade_cliente int(3) not null,
+email_cliente varchar(80) not null
+); */
+
+-- display da tabela 
+-- describe itau.clientes;
+
+-- Inserir dados na tabela 
+/*insert into itau.clientes
+(cod_cliente,nome_cliente,idade_cliente,email_cliente)
+values
+(1,"Chico Bento",22,"Cbento@itau.com.br"),
+(2,"Jose Lele",20,"Jlele@itau.com.br"),
+(3,"Rosinha Silva",18,"Rsilva@itau.com.br"),
+(4,"Maria Santos",20,"Msantos@itau.com.br");*/
+
+-- Verificar os Registros na tabela
+-- select * from itau.clientes;
+
+-- Consultas com ordenação, filtros para os dados na tabela 
+-- select nome_cliente,idade_cliente,email_cliente from itau.clientes order by nome_cliente;
+-- select nome_cliente,email_cliente from itau.clientes where idade_cliente >= 18 and idade_cliente <= 25 order by idade_cliente;
+-- select max(idade_cliente) from itau.clientes;
+-- select min(idade_cliente) from itau.clientes;
+-- select * from itau.clientes where idade_cliente=22;
+
+-- Exemplo count 
+-- select count(idade_cliente) from itau.clientes where idade_cliente >= 18 and idade_cliente <= 25;
+-- select count(idade_cliente) from itau.clientes where idade_cliente=(select max(idade_cliente) from itau.clientes);
+
+
+-- exemplo de subselect
+-- select * from itau.clientes where idade_cliente=(select max(idade_cliente) from itau.clientes);
+-- select count(idade_cliente) from itau.clientes where idade_cliente=(select min(idade_cliente) from itau.clientes);
+-- select * from itau.clientes where idade_cliente=(select min(idade_cliente) from itau.clientes) order by cod_cliente;
+
+-- exemplo clausula int 
+-- select * from itau.clientes where idade_cliente in(20,30,40) order by idade_cliente;
+
+-- exemplo de alteração no database
+-- alter table itau.clientes add endereco varchar(80) not null;
+-- alter table itau.clientes rename column endereco to endereco_cliente;
+-- update itau.clientes set endereco_cliente = 'Atualizar Cadastro';
+-- update itau.clientes set endereco_cliente = 'Rua Catão' where cod_cliente in(1,10,50);
+
+-- consulta com parte da informação de inicio e fim e no meio
+-- select * from itau.clientes where nome_cliente like "chico%"; 
+-- select * from itau.clientes where nome_cliente like "%bento"; 
+-- select * from itau.clientes where nome_cliente like "%C.%"; 
+-- update itau.clientes set endereco_cliente = 'Rua Clelia' where nome_cliente like "Chico%"; 
+
+-- Backup tabela e consulta nesta tabela
+-- create table itau.bck_clientes select * from itau.clientes; 
+-- select * from itau.bck_clientes;
+
+-- Deletar registros na tabela especifico e total 
+-- delete from itau.clientes where idade_cliente >= 10;
+-- delete from itau.clientes;
+
+-- Restaurar backup
+/*
+insert into itau.clientes
+(cod_cliente,nome_cliente,idade_cliente,email_cliente,endereco_cliente)
+select cod_cliente,nome_cliente,idade_cliente,email_cliente,endereco_cliente from itau.bck_clientes;
+*/
+
+
+describe itau.clientes;
+select * from itau.clientes;
+select * from itau.bck_clientes;
+
+
+
+
+
+
+
+
+INFOS DO PROFESS ===== 
+
+select nome_cliente,idade_cliente,email_cliente from itau.clientes order by nome_cliente;
+
+select nome_cliente,idade_cliente,email_cliente from itau.clientes where idade_cliente>=18 and idade_cliente<=25 order by idade_cliente; 
+
+select count(idade_cliente)  from itau.clientes where idade_cliente>=18 and idade_cliente<=25
+
+select max(idade_cliente) from itau.clientes;
+select min(idade_cliente) from itau.clientes;
+select * from itau.clientes where idade_cliente=100;
+
+select * from itau.clientes where idade_cliente=(select min(idade_cliente) from itau.clientes);
+select count(idade_cliente) from itau.clientes where idade_cliente=(select min(idade_cliente) from itau.clientes);
+
+alter table itau.clientes add endereco varchar(80) not null;
+alter table itau.clientes rename column endereco to endereco_cliente;
+describe itau.clientes;
+
+update itau.clientes set endereco_cliente="Atualizar Cadastro"; 
+
+update itau.clientes set endereco_cliente="Rua Catão" where cod_cliente in(1,10,50);
+
+select * from itau.clientes where nome_cliente like "Clayton%";
+select * from itau.clientes where nome_cliente like "%Pires";
+select * from itau.clientes where nome_cliente like "%C.%";
+
+update itau.clientes set endereco_cliente="Rua Clélia" where nome_cliente like "Clayton%";
+
+==== Criando Backup
+create table itau.bck_clientes select * from itau.clientes;
+
+==== Vendo os resgistros do backup
+select * from itau.bck_clientes;
+
+===== Excluir registros cuja a idade for >=40 anos
+delete from itau.clientes where idade_cliente >=40;
+
+===== Excluir todos os registros 
+delete from itau.clientes;
+
+==========================================
+Após o intervalo do almoço
+
+======== Procedimento feito para efetuar o backup na tabela quente
+
+insert into itau.clientes
+(cod_cliente,nome_cliente,idade_cliente,email_cliente,endereco_cliente)
+select cod_cliente,nome_cliente,idade_cliente,email_cliente,endereco_cliente from itau.bck_clientes;
+
+
+create table itau.clientes(
+cod_cliente int not null auto_increment,
+nome_cliente varchar(50) not null,
+cpf_cliente char(11) not null,
+idade_cliente int(3) not null,
+endereco_cliente varchar(80) not null,
+bairro_cliente varchar(50) not null,
+estado_cliente char(2) not null,
+cep_cliente char(8) not null,
+agencia_cliente int(4) not null,
+conta_corrente_cliente int(8) not null,
+dig_verificador_cliente int(1) not null,
+email_cliente varchar(80) not null,
+data_modificacao_registro datetime,
+primary key (cod_cliente,cpf_cliente)
+);
+
+
+insert into itau.clientes
+(cod_cliente,nome_cliente,cpf_cliente,idade_cliente,endereco_cliente,bairro_cliente,estado_cliente,cep_cliente,agencia_cliente,conta_corrente_cliente,dig_verificador_cliente,email_cliente,data_modificacao_registro)
+select cod_cliente,nome_cliente,'atualizar',idade_cliente,endereco_cliente,'atualizar','XX','cep',0,0,0,email_cliente,now() from unibanco.clientes;
+
+update itau.clientes set estado_cliente="SP"; 
+update itau.clientes set cep_cliente="00000000"; 
+
+alter table itau.produtos add cidade_venda varchar(40) not null;
+alter table itau.produtos add tipo_produto varchar(40) not null;
+
+select * from itau.produtos;
+
+update itau.produtos set tipo_produto="Eletrodomésticos" where cod_produto in(2,3,4,5);
+update itau.produtos set tipo_produto="Eletronicos" where cod_produto=6;
+update itau.produtos set cidade_venda="São Paulo" where cod_produto in(2,6);
+update itau.produtos set cidade_venda="Rio de Janeiro" where cidade_venda='';
+
+SELECT 
+    nome_produto,
+    qtd_produto,
+    vl_unitario_produto,
+    cidade_venda,
+    tipo_produto,
+    (qtd_produto * vl_unitario_produto) AS Total_Produto
+FROM
+    itau.produtos;
+
+================
+Quebrando valores por sub-grupos
+
+select cidade_venda,sum(qtd_produto*vl_unitario_produto) as Total_produtos from itau.produtos group by cidade_venda;
+
+===============
+Último Intervalo
+
+Visualizando duas tabelas sem a utilização do Inner Join
+
+select p.nome_produto,p.qtd_produto,p.vl_unitario_produto,p.cidade_venda,m.nome_marca
+from itau.produtos as p,
+itau.marcas as m
+where p.cod_marca_produto=m.cod_marca;
+
+===============
+Criando a visualização de duas ou mais tabelas com Inner Join
+
+select p.nome_produto,p.qtd_produto,p.vl_unitario_produto,p.cidade_venda,m.nome_marca
+from itau.produtos as p
+inner join itau.marcas as m
+on(p.cod_marca_produto=m.cod_marca);
+
+select p.nome_produto,p.qtd_produto,p.vl_unitario_produto,p.cidade_venda,m.nome_marca
+from itau.produtos as p
+right join itau.marcas as m
+on(p.cod_marca_produto=m.cod_marca);
+
+*****************************************
+29 e 30/10 - Aulas Danilo Gonçalves 
+
+http://heroku.com/
+
+https://devcenter.heroku.com/articles/heroku-cli
+
+https://git-scm.com/download
+
+https://code.visualstudio.com/download
+
+http://www.torneseumprogramador.com.br/aula?id=xTTVyD2WrnU&aula=31&tipo=back-end&professor=Danilo - Minuto 30:00
+
+Deploy C#
+http://www.torneseumprogramador.com.br/aula?id=y8Y4ln_Hgqo&aula=104&tipo=c-sharp&professor=Danilo
+
+http://www.torneseumprogramador.com.br/busca?q=deploy
+
+Deploys
+
+https://github.com/Didox/treinamento_php_itau
+https://github.com/Didox/kitutes-donate-treinamento-itau
+
+git clone [URL GIT]
+
+git status 
+git add .
+git commit -am "alteração de nome do projeto"
+
+https://github.com/Didox/validar-cpf-back-spring-boot
+
+git init
+git status
+git add .
+git commit -am "deploy api java"
+heroku login -i
+heroku create java-spring-[seu-nome]
+git push heroku master
+
+
+https://github.com/Didox/validar-cpf-front-js-vanilla
+
+
+https://github.com/Didox/app_um_minuto_cliente_produto
+
+=========
+
+dicas professor danilo 
+http://heroku.com/
+
+https://devcenter.heroku.com/articles/heroku-cli
+
+https://git-scm.com/download
+
+https://code.visualstudio.com/download
+
+http://www.torneseumprogramador.com.br/aula?id=xTTVyD2WrnU&aula=31&tipo=back-end&professor=Danilo - Minuto 30:00
+
+Deploy C#
+http://www.torneseumprogramador.com.br/aula?id=y8Y4ln_Hgqo&aula=104&tipo=c-sharp&professor=Danilo
+
+http://www.torneseumprogramador.com.br/busca?q=deploy
+
+Deploys
+
+https://github.com/Didox/treinamento_php_itau
+https://github.com/Didox/kitutes-donate-treinamento-itau
+
+git clone [URL GIT]
+
+git status 
+git add .
+git commit -am "alteração de nome do projeto"
+
+https://github.com/Didox/validar-cpf-back-spring-boot
+
+
+Gestão em processos de software
+https://www.youtube.com/channel/UC8f-8l1OL00BT_Aw_KpnUow
+https://www.youtube.com/user/rfbuzon
+
+
+git init
+git status
+git add .
+git commit -am "deploy api java"
+heroku login -i
+heroku create java-spring-[seu-nome]
+git push heroku master
+
+
+https://github.com/Didox/validar-cpf-front-js-vanilla
+
+
+https://github.com/Didox/app_um_minuto_cliente_produto
+
+
+heroku logs
+
+rake db:migrate
+
+### no heroku cli  ####
+heroku run rake db:migrate
+
+
+https://github.com/Didox/turma_devops
+
+
+https://nodejs.org/en/download/
+
+para depois do almoço
+https://www.jenkins.io/download/
+
+npm install
+
+npm --version
+
+npm start
+
+http://localhost:3000/
+
+services.msc
+
+Aula sobre http
+http://www.torneseumprogramador.com.br/aula?id=kRy_VVLWtf4&aula=41&tipo=back-end&professor=Danilo
+
+npm run tdd
+
+npx cypress open
+
+cd c:\entra_no_diretorio
+mkdir pasta1
+
+
+
+Jobs no jenkins encadeados
+Build > Tdd > Bdd > Dev > Homolog > Prod
+
+
+Plugin no jenkins "Build Pipeline View"
+
+
