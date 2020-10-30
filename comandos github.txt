@@ -406,6 +406,23 @@ cd c:\entra_no_diretorio
 mkdir pasta1
 
 
+Jobs no jenkins encadeados
+Build > Tdd > Bdd > Dev > Homolog > Prod
+
+
+Plugin no jenkins "Build Pipeline View"
+
+Aula GIT
+http://www.torneseumprogramador.com.br/aula?id=JiyKMqVfP1M&aula=20&tipo=back-end&professor=Danilo
+
+Rodar windows background
+START /B npm start 2>&1
+
+
+Rodar linux background
+nohup npm start &
+
+
 
 Jobs no jenkins encadeados
 Build > Tdd > Bdd > Dev > Homolog > Prod
